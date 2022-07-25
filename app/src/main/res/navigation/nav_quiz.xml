@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_quiz"
+    app:startDestination="@id/onBoardingFragment">
+
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.baseproject.OnBoardingFragment"
+        android:label="OnBoardingScreen"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_introFragment"
+            app:destination="@id/introFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.example.baseproject.IntroFragment"
+        android:label="Intro Screen"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment_to_quizzFragment"
+            app:destination="@id/quizzFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizzFragment"
+        android:name="com.example.baseproject.QuizzFragment"
+        android:label="Quizz Screen"
+        tools:layout="@layout/fragment_quizz" >
+        <action
+            android:id="@+id/action_quizzFragment_to_failFragment"
+            app:destination="@id/failFragment" />
+        <action
+            android:id="@+id/action_quizzFragment_to_congratFragment"
+            app:destination="@id/congratFragment" />
+        <action
+            android:id="@+id/action_quizzFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/congratFragment"
+        android:name="com.example.baseproject.CongratFragment"
+        android:label="Congraluation Screen"
+        tools:layout="@layout/fragment_congrat" >
+        <action
+            android:id="@+id/action_congratFragment_to_quizzFragment"
+            app:destination="@id/quizzFragment" />
+        <argument android:name="scoreArg"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/failFragment"
+        android:name="com.example.baseproject.FailFragment"
+        android:label="Failed Screen"
+        tools:layout="@layout/fragment_fail" >
+        <action
+            android:id="@+id/action_failFragment_to_quizzFragment"
+            app:destination="@id/quizzFragment" />
+    </fragment>
+</navigation>
